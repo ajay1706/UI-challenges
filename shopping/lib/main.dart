@@ -34,6 +34,7 @@ class _HomePageState extends State<HomePage> {
                         fontSize: 40.0,
                         color: Colors.white),
                   ),
+                  SizedBox(height: 10,),
                     Text(
                       "Drop a Chic Selection of Outwear",
                       style:TextStyle(  
@@ -55,6 +56,7 @@ class _HomePageState extends State<HomePage> {
                         fontWeight:FontWeight.w200
                       )
                     ),
+           
                     SizedBox(
                       height: 175.0,
                     ),
