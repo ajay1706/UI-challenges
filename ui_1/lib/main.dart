@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_1/fruits.dart';
 
 void main() => runApp(MaterialApp(
 
@@ -98,8 +99,83 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               ],
 
             ),
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height - 200,
+            child: TabBarView(
+              controller: tabController,
+              children: <Widget>[
+                FruitsPage(),
+                 FruitsPage(),
+                  FruitsPage(),
+                 
+
+              ],
+            ),
           )
         ],
+      ),
+      bottomNavigationBar:Material(
+        child: Container(
+          margin: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: Colors.white,
+               ),
+               height: 60,
+               width: MediaQuery.of(context).size.width,
+               child: Row(
+                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                 children: <Widget>[
+                   Container(
+                     padding: EdgeInsets.only(bottom: 5.0,),
+                     child: Text(
+                       "Filters",
+                       style:TextStyle(  
+                    fontSize:15,
+                      fontFamily:'Montserrat',
+                      fontWeight:FontWeight.bold
+                       ),
+                       
+                     ),
+                     decoration: BoxDecoration(
+                       border: Border(
+                         bottom: BorderSide(
+                           color: Colors.black,
+                           style: BorderStyle.solid,
+                           width: 1
+                         )
+                       )
+                     ),
+                   ),
+                   Icon(Icons.search,
+                   color:Colors.black,
+                   size:25),
+                        Icon(Icons.favorite_border,
+                   color:Colors.black,
+                   size:25),
+                   Container(
+                     decoration: BoxDecoration(
+                       borderRadius: BorderRadius.circular(25),
+                       color: Colors.red
+                     ),
+                     height: 45,
+                     width: 75,
+                     child: Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                       children: <Widget>[
+                         Text("12",style:TextStyle(  
+                           fontFamily:'Montserrat',
+                           color:Colors.white,
+                           fontSize:15,
+                           fontWeight:FontWeight.bold
+                         )),
+                         Icon(Icons.shopping_cart,color:Colors.white,size:15)
+                       ],
+                     ),
+                   )
+                 ],
+               ),
+        ),
       ),
       
     );
