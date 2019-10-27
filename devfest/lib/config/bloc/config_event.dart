@@ -55,7 +55,7 @@ class LoadConfigEvent extends ConfigEvent{
     }
     catch(_,stackTrace){
       print(stackTrace);
-      return ErrorConfigState(_?? toString());
+      return ErrorConfigState(_?.toString());
 
 
     }

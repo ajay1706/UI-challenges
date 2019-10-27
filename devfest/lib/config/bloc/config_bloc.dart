@@ -3,22 +3,27 @@ import 'package:bloc/bloc.dart';
 import './bloc.dart';
 
 class ConfigBloc extends Bloc<ConfigEvent, ConfigState> {
-
   static final ConfigBloc _configBlocSingleton = ConfigBloc._internal();
-
-factory ConfigBloc(){
-  return _configBlocSingleton;
-}
-
+  factory ConfigBloc() {
+    return _configBlocSingleton;
+  }
   ConfigBloc._internal();
+
   bool darkModeOn = false;
-  @override
-  ConfigState get initialState => UnConfigState();
+
+  ConfigState get initialState =>  UnConfigState();
 
   @override
   Stream<ConfigState> mapEventToState(
     ConfigEvent event,
   ) async* {
-    // TODO: Add Logic
-  }
-}
+    try{
+yield UnConfigState();
+yield await event.applyAsync(currentState: state , bloc: this);
+    }
+    catch(_,stackTrace) {
+      print(stackTrace);
+      yield state;
+    }
+  
+}}
