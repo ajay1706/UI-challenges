@@ -1,5 +1,6 @@
 import 'package:devfest/config/bloc/bloc.dart';
 import 'package:devfest/universal/image_card.dart';
+import 'package:devfest/utils/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:devfest/utils/devfest.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -72,6 +73,23 @@ Widget socialActions(context) => FittedBox(
     ],
   ),
 );
+Widget newActions(context) => Wrap(  
+  alignment: WrapAlignment.center,
+  spacing: 20,
+  runSpacing: 20,
+  children: <Widget>[
+
+ActionCard(icon: Icons.schedule,title: DevFest.agenda_text,color: Colors.red,onPressed: (){},),
+ActionCard(icon: Icons.person,title: DevFest.speakers_text,color: Colors.green,onPressed: (){},),
+ActionCard(icon: Icons.people,title: DevFest.team_text,color: Colors.amber,onPressed: (){},),
+ActionCard(icon: Icons.attach_money,title: DevFest.sponsor_text,color: Colors.purple,onPressed: (){},),
+ActionCard(icon: Icons.question_answer,title: DevFest.faq_text,color: Colors.brown,onPressed: (){},),
+ActionCard(icon: Icons.map,title: DevFest.map_text,color: Colors.blue,onPressed: (){},)
+
+    
+    
+  ],
+);
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +101,8 @@ Widget socialActions(context) => FittedBox(
         ImageCard(img: ConfigBloc().darkModeOn ? DevFest.banner_dark: DevFest.banner_light,),
         SizedBox(height: 20,),
         ...devFestTexts(context),
+         SizedBox(height: 20,),
+         newActions(context),
          SizedBox(height: 20,),
          socialActions(context),
          SizedBox(height: 20,),
@@ -96,5 +116,48 @@ Widget socialActions(context) => FittedBox(
       ),
       
     );
+  }
+}
+
+class ActionCard extends StatelessWidget {
+  final Function onPressed;
+  final IconData icon;
+  final String title;
+  final Color color;
+
+  const ActionCard({Key key, this.onPressed, this.icon, this.title, this.color}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+  borderRadius: BorderRadius.circular(8),
+  child:   Ink(
+    
+    height: MediaQuery.of(context).size.height*0.1,
+  width: MediaQuery.of(context).size.width*0.2,
+  decoration: BoxDecoration(
+    color: ConfigBloc().darkModeOn ? Tools.hexToColor('#1f2124'): Colors.white,
+    borderRadius: BorderRadius.circular(8),
+    boxShadow: !ConfigBloc().darkModeOn ? [
+  BoxShadow(color: Colors.grey[200],
+  blurRadius: 10,
+  spreadRadius: 5)
+    ] : null
+  ),
+  
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+  Icon(
+    icon,
+    color: color,),
+    SizedBox(height: 10,),
+    Text(title,
+    style: Theme.of(context).textTheme.title.copyWith(fontSize: 12),)
+    ],
+  ),
+  
+  ),
+  onTap: onPressed,
+);
   }
 }
