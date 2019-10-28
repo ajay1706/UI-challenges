@@ -1,3 +1,4 @@
+import 'package:devfest/agenda/agenda_page.dart';
 import 'package:devfest/config/bloc/bloc.dart';
 import 'package:devfest/universal/image_card.dart';
 import 'package:devfest/utils/tools.dart';
@@ -79,7 +80,7 @@ Widget newActions(context) => Wrap(
   runSpacing: 20,
   children: <Widget>[
 
-ActionCard(icon: Icons.schedule,title: DevFest.agenda_text,color: Colors.red,onPressed: (){},),
+ActionCard(icon: Icons.schedule,title: DevFest.agenda_text,color: Colors.red,onPressed: (){ Navigator.pushNamed(context, AgendaPage.routeName);},),
 ActionCard(icon: Icons.person,title: DevFest.speakers_text,color: Colors.green,onPressed: (){},),
 ActionCard(icon: Icons.people,title: DevFest.team_text,color: Colors.amber,onPressed: (){},),
 ActionCard(icon: Icons.attach_money,title: DevFest.sponsor_text,color: Colors.purple,onPressed: (){},),

@@ -1,3 +1,4 @@
+import 'package:devfest/agenda/agenda_page.dart';
 import 'package:devfest/config/bloc/bloc.dart';
 import 'package:devfest/home/home_page.dart';
 import 'package:devfest/utils/devfest.dart';
@@ -49,7 +50,13 @@ class _ConfgiPageState extends State<ConfgiPage> {
 
 
             ),
-            home: HomePage()
+            home: HomePage(),
+            routes: {
+              HomePage.routeName:(context) => HomePage(),
+              AgendaPage.routeName:(context) => AgendaPage()
+
+
+            },
           );
         },
       ),
