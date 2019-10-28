@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:devfest/agenda/session_list.dart';
+import 'package:devfest/home/session.dart';
 import 'package:devfest/universal/dev_scaffold.dart';
 import 'package:devfest/utils/tools.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +38,7 @@ class AgendaPage extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
-            Container(),
+            SessionList(allSessions: sessions,),
             Container(),
             Container(),
 
