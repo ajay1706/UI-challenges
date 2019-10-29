@@ -1,4 +1,5 @@
 import 'package:devfest/agenda/agenda_page.dart';
+import 'package:devfest/agenda/session_detail.dart';
 import 'package:devfest/config/bloc/bloc.dart';
 import 'package:devfest/home/home_page.dart';
 import 'package:devfest/speakers/speaker_page.dart';
@@ -55,7 +56,8 @@ class _ConfgiPageState extends State<ConfgiPage> {
             routes: {
               HomePage.routeName:(context) => HomePage(),
               AgendaPage.routeName:(context) => AgendaPage(),
-               SpeakerPage.routeName:(context) => SpeakerPage()
+               SpeakerPage.routeName:(context) => SpeakerPage(),
+               SessionDetail.routeName:(context) => SessionDetail()
 
 
             },

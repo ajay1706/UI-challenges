@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:devfest/agenda/session_detail.dart';
 import 'package:devfest/home/session.dart';
 import 'package:devfest/utils/tools.dart';
 import 'package:flutter/material.dart';
@@ -19,8 +20,14 @@ class SessionList extends StatelessWidget {
       itemCount: allSessions.length,
       itemBuilder: (c,i){
         return Card(
+          
           elevation: 0,
           child: ListTile(
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(
+                builder:(context) => SessionDetail(session: allSessions[i],)
+              ));
+            },
             isThreeLine: true,
             leading: Hero(
               tag: allSessions[i].speakerImage,
