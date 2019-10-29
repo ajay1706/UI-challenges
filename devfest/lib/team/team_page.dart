@@ -50,9 +50,17 @@ imageUrl: teams[i].image,
               width: MediaQuery.of(context).size.width*0.2,
               height: 5,
               color: Tools.multiColors[Random().nextInt(4)],
-            )
+            ),
+            SizedBox(height: 10,),
+            Text(teams[i].desc,
+            style: Theme.of(context).textTheme.subtitle,),
+             SizedBox(height: 10,),
+            Text(teams[i].contribution,
+            style: Theme.of(context).textTheme.caption,),
+
           ],
         ),
+      
       )
     ],
   ),
