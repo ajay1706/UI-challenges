@@ -35,7 +35,23 @@ final Session session;
            style: Theme.of(context).textTheme.title.copyWith(
              fontSize: 18,
              color: Tools.multiColors[Random().nextInt(4)]
-           ),)
+           ),),
+           SizedBox(height: 20,),
+           Text("${session.sessionTitle}",
+           textAlign: TextAlign.center,
+           style: Theme.of(context).textTheme.title.copyWith(
+             fontSize: 24,
+            fontWeight: FontWeight.bold
+           ),),
+           SizedBox(height: 10,),
+            Text("${session.sessionDesc}",
+           textAlign: TextAlign.center,
+           style: Theme.of(context).textTheme.title.copyWith(
+             fontSize: 14,
+             color: Colors.black54
+           
+           ),),
+
 
          ],
        ),
