@@ -1,6 +1,7 @@
 import 'package:devfest/agenda/agenda_page.dart';
 import 'package:devfest/config/bloc/bloc.dart';
 import 'package:devfest/speakers/speaker_page.dart';
+import 'package:devfest/sponsors/sponsors_page.dart';
 import 'package:devfest/team/team_page.dart';
 import 'package:devfest/universal/image_card.dart';
 import 'package:devfest/utils/tools.dart';
@@ -85,7 +86,7 @@ Widget newActions(context) => Wrap(
 ActionCard(icon: Icons.schedule,title: DevFest.agenda_text,color: Colors.red,onPressed: (){ Navigator.pushNamed(context, AgendaPage.routeName);},),
 ActionCard(icon: Icons.person,title: DevFest.speakers_text,color: Colors.green,onPressed: (){Navigator.pushNamed(context, SpeakerPage.routeName);},),
 ActionCard(icon: Icons.people,title: DevFest.team_text,color: Colors.amber,onPressed: (){Navigator.pushNamed(context, TeamPage.routeName);},),
-ActionCard(icon: Icons.attach_money,title: DevFest.sponsor_text,color: Colors.purple,onPressed: (){},),
+ActionCard(icon: Icons.attach_money,title: DevFest.sponsor_text,color: Colors.purple,onPressed: (){Navigator.pushNamed(context, SponsorPage.routeName);},),
 ActionCard(icon: Icons.question_answer,title: DevFest.faq_text,color: Colors.brown,onPressed: (){},),
 ActionCard(icon: Icons.map,title: DevFest.map_text,color: Colors.blue,onPressed: (){},)
 
