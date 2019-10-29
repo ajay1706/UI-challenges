@@ -3,6 +3,7 @@ import 'package:devfest/agenda/session_detail.dart';
 import 'package:devfest/config/bloc/bloc.dart';
 import 'package:devfest/home/home_page.dart';
 import 'package:devfest/speakers/speaker_page.dart';
+import 'package:devfest/team/team_page.dart';
 import 'package:devfest/utils/devfest.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -57,7 +58,9 @@ class _ConfgiPageState extends State<ConfgiPage> {
               HomePage.routeName:(context) => HomePage(),
               AgendaPage.routeName:(context) => AgendaPage(),
                SpeakerPage.routeName:(context) => SpeakerPage(),
-               SessionDetail.routeName:(context) => SessionDetail()
+               
+                  TeamPage.routeName:(context) => TeamPage()
+
 
 
             },

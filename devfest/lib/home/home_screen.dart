@@ -4,7 +4,7 @@ import 'package:devfest/home/bloc/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'home_widgets.dart/home_fornt.dart';
+import 'home_widgets.dart/home_front.dart';
 
 
 class HomeScreen extends StatefulWidget {
