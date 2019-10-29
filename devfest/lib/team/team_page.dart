@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:devfest/home/team_data.dart';
 import 'package:devfest/universal/dev_scaffold.dart';
+import 'package:devfest/utils/tools.dart';
 import 'package:flutter/material.dart';
 
 class TeamPage extends StatelessWidget {
@@ -16,7 +19,7 @@ class TeamPage extends StatelessWidget {
         itemCount: teams.length,
         itemBuilder: (context, i) {
           return Card(
-            color: Colors.red,
+            elevation: 0,
 child: Padding(
   padding: const EdgeInsets.all(12),
   child: Row(
@@ -31,6 +34,25 @@ child: Padding(
 fit: BoxFit.cover,
 imageUrl: teams[i].image,
             ),
+      ),
+      SizedBox(width: 20,),
+      Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Text(teams[i].name,
+            style: Theme.of(context).textTheme.title,),
+            SizedBox(height: 8,),
+            AnimatedContainer(
+              duration: Duration(seconds: 1),
+              width: MediaQuery.of(context).size.width*0.2,
+              height: 5,
+              color: Tools.multiColors[Random().nextInt(4)],
+            )
+          ],
+        ),
       )
     ],
   ),
